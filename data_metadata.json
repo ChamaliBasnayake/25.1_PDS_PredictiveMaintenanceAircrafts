@@ -1,0 +1,57 @@
+{
+    "dataset_name": "NASA CMAPSS FD003",
+    "source": "NASA Prognostics Data Repository",
+    "collection_methodology": {
+        "source_download": "Dataset manually downloaded from NASA public repository",
+        "local_storage": "Stored locally in 'data/raw'",
+        "cloud_upload": "Uploaded to AWS S3 raw data zone using boto3",
+        "future_processing": "Processed structured outputs can later be written to AWS RDS PostgreSQL for downstream analytics, modeling, and dashboard access"
+    },
+    "cloud_architecture": {
+        "raw_storage": "s3://aviation-predictive-maintenance-dataset-chamb/raw/",
+        "metadata_storage": "s3://aviation-predictive-maintenance-dataset-chamb/metadata/data_metadata.json",
+        "compute": "AWS EC2 for ETL and preprocessing",
+        "database": "AWS RDS PostgreSQL for processed data"
+    },
+    "schema": {
+        "columns": [
+            "unit_number",
+            "cycle",
+            "operational_setting_1",
+            "operational_setting_2",
+            "operational_setting_3",
+            "sensor_1",
+            "sensor_2",
+            "sensor_3",
+            "sensor_4",
+            "sensor_5",
+            "sensor_6",
+            "sensor_7",
+            "sensor_8",
+            "sensor_9",
+            "sensor_10",
+            "sensor_11",
+            "sensor_12",
+            "sensor_13",
+            "sensor_14",
+            "sensor_15",
+            "sensor_16",
+            "sensor_17",
+            "sensor_18",
+            "sensor_19",
+            "sensor_20",
+            "sensor_21"
+        ],
+        "target_variable_note": "Remaining Useful Life (RUL) is derived later during preprocessing, not stored directly in the raw FD003 training file"
+    },
+    "ingestion_summary": {
+        "upload_timestamp_utc": "2026-03-29T05:28:03.797669Z",
+        "file_count": 4,
+        "uploaded_files": [
+            "readme.txt",
+            "RUL_FD003.txt",
+            "test_FD003.txt",
+            "train_FD003.txt"
+        ]
+    }
+}
